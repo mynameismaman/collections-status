@@ -29,13 +29,13 @@ export default function ShowImages({datas}:{datas:array}) {
   }
 
   return (
-    <div className="flex flex-row flex-wrap gap-3 items-start justify-around columns-1 md:columns-2 lg:columns-3 relative">
+    <div className="flex flex-row flex-wrap gap-3 items-start justify-around columns-1 md:columns-2 lg:columns-3">
       {datas.map((name, index) =>( 
         <CardImages fileName={name.imgName} key={index} show={()=> showImage(name.imgName)}/>
       ))}
-      <Modal open={show} onClose={handleClose}>
+      {show ? (<Modal onClose={handleClose}>
         <Image src={"/images/" + imageName} alt={imageName} layout="fill" objectFit="scale-down" className="p-4"/>
-      </Modal>
+    </Modal>):null}
     </div>
   );
 }
