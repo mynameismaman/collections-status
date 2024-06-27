@@ -1,6 +1,6 @@
 import Image from "next/legacy/image";
 
-export default function CardImages({ fileName, show }: { fileName: string; show:()=>void; }) {
+export default function CardImages({ fileName, show, download }: { fileName: string; show:()=>void; download:()=>void; }) {
   return (
     <div className="flex flex-col w-60 h-fit rounded overflow-hidden shadow-lg">
       <Image className="object-contain"
@@ -10,7 +10,7 @@ export default function CardImages({ fileName, show }: { fileName: string; show:
         height={500}
       />
       <div className="p-1 text-sm flex flex-row justify-between">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-xs font-bold py-1 px-2 rounded inline-flex items-center" >
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-xs font-bold py-1 px-2 rounded inline-flex items-center" onClick={download}>
           <svg
             className="fill-current w-4 h-4 mr-2"
             xmlns="http://www.w3.org/2000/svg"

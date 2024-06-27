@@ -2,10 +2,12 @@
 export default function Modal({
   open,
   onClose,
+  download,
   children,
 }: {
   open: boolean;
   onClose: () => void;
+  download:() => void;
   children: React.ReactNode;
 }) {
   return (
@@ -18,7 +20,7 @@ export default function Modal({
         <div className="flex flex-row justify-end items-end h-full w-full relative">
           {children}
         </div>
-        <button className="absolute bottom-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50">Download</button>
+        <button className="absolute bottom-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50" onClick={download}>Download</button>
       </div>
     </div>
   );
