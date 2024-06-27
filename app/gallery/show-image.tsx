@@ -33,9 +33,9 @@ export default function ShowImages({datas}:{datas:array}) {
       {datas.map((name, index) =>( 
         <CardImages fileName={name.imgName} key={index} show={()=> showImage(name.imgName)}/>
       ))}
-      {show ? (<Modal onClose={handleClose}>
-        <Image src={"/images/" + imageName} alt={imageName} layout="fill" objectFit="scale-down" className="p-4"/>
-    </Modal>):null}
+      <Modal onClose={handleClose} open={show}>
+        {show ? (<Image src={"/images/" + imageName} alt={imageName} layout="fill" objectFit="scale-down" className="p-4"/>):null}
+    </Modal>
     </div>
   );
 }
