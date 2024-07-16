@@ -17,7 +17,7 @@ export default function Modal({
   return (
     <div
       onClick={onClose}
-      className={`fixed inset-0 flex flex-col justify-center items-center transition-colors ${open ? "visible bg-black/20" : "invisible"} `}
+      className={`fixed inset-0 flex flex-col justify-center items-center transition-colors ${open ? "visible bg-black/80" : "invisible"} `}
     >
       <div onClick={(e) => e.stopPropagation()} className={`bg-white rounded-xl shadow p-6 transition-all ${ open ? "scale-100 opacity-100":"scale-125 opacity-0"} h-[30rem] sm:h-[32rem] w-[20rem] sm:w-1/2`}>
         <button className="absolute top-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50" onClick={onClose}>x</button>
@@ -27,8 +27,8 @@ export default function Modal({
       </div>
       <div onClick={(e) => e.stopPropagation()} className={`mt p-2 transition-all ${ open ? "scale-100 opacity-100":"scale-125 opacity-0"} w-[20rem] sm:w-1/2`}>
         <div className="flex flex-row justify-between">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded inline-flex items-center" onClick={onPrevious}>Previous</button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-sm font-bold py-2 px-3 rounded inline-flex items-center" onClick={download}>          <svg
+        <button className="bg-slate-500 hover:bg-slate-400 text-white text-sm font-bold py-2 px-3 rounded inline-flex items-center" onClick={onPrevious}>Previous</button>
+        <button className="bg-yellow-500 hover:bg-yellow-400 text-gray-800 text-sm font-bold py-2 px-3 rounded inline-flex items-center" onClick={download}>          <svg
             className="fill-current w-4 h-4 mr-2"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -37,7 +37,7 @@ export default function Modal({
           </svg>
           <span>Download</span>
  </button>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded inline-flex items-center" onClick={onNext}>Next</button>
+        <button className="bg-slate-500 hover:bg-slate-400 text-white text-sm font-bold py-2 px-3 rounded inline-flex items-center" onClick={onNext}>Next</button>
 
         </div>
       </div>
