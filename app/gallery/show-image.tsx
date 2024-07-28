@@ -11,7 +11,7 @@ type ImgData = {
   fileSorted: Date;
 };
 
-export default function ShowImages({datas}:{datas:array}) {
+export default function ShowImages({datas}:{datas:Array<any>}) {
   const [show, setShow] = useState(false);
   const [imageName, setImageName] = useState("");
   const [indexImage, setIndexImage] = useState(0);
@@ -27,13 +27,13 @@ export default function ShowImages({datas}:{datas:array}) {
     setIndexImage(0);
   }
   
-  function showImage(name,index){
+  function showImage(name:any,index:any){
     setImageName(name);
     setIndexImage(index);
     setShow(true);
   }
 
-  function handleDownload(name){
+  function handleDownload(name:any){
     download("/images/" + name, name);
   }
 
